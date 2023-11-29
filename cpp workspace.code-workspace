@@ -1,0 +1,36 @@
+{
+	"folders": [
+		{
+			"path": "Programs"
+		}
+	],
+	"launch": {
+		"version": "0.2.0",
+		"configurations": []
+	},
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp",
+			"string": "cpp",
+			"*.tcc": "cpp",
+			"deque": "cpp",
+			"list": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp",
+			"vector": "cpp",
+			"forward_list": "cpp",
+			"bitset": "cpp",
+			"array": "cpp",
+			"string_view": "cpp",
+			"initializer_list": "cpp",
+			"ranges": "cpp",
+			"span": "cpp",
+			"regex": "cpp",
+			"valarray": "cpp",
+			"istream": "cpp",
+			"functional": "cpp",
+			"ostream": "cpp",
+			"iomanip": "cpp"
+		}
+	}
+}
