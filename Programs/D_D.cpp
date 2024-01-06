@@ -1,52 +1,36 @@
 #include <iostream>
-#include <algorithm>
-#include <string>
 #include <vector>
+#include <algorithm>
+#include <cmath>
+#include <string>
 using namespace std;
 
-int main() 
-{
-    long long i,n,j,l,over,ball;
-    string s,ov = "OVER",ba = "BALL";
-    cin>>n;
-    for (i = 0; i < n; i++)
-    {
-        over = 0;
-        ball = 0;
-        cin>>s;
-        l = s.length();
-        for (j = 0; j < l; j++)
-        {
-            if (s[j]!='N' && s[j]!='W' && s[j]!='D')
-            {
-                ball++;
+int main() {
+    long long t, n, k, sum1, sum2;
+    cin >> t;
+
+    while (t--) {
+        cin >> n >> k;
+        vector<long long> a(n);
+
+        for (long long i = 0; i < n; i++) {
+            cin >> a[i];
+        }
+
+        sum1 = 0;
+        sum2 = 0;
+        sort(a.begin(), a.end(), greater<int>());
+
+        for (long long i = 0; i < n; i++) {
+            if ((i % 2 == 0) && i != n - 1) {
+                sum1 = sum1 + a[i];
+            } else {
+                sum2 = sum2 + a[i];
             }
         }
-        over = ball/6;
-        ball = ball%6;
-        if (over>1)
-        {
-            ov = ov+'S';
-        }
-        if (ball>1)
-        {
-            ba = ba+'S';
-        }
-        if (over == 0)
-        {
-            cout<< ball<<" "<<ba<<"\n";
-        }
-        else
-        {
-            if(ball == 0)
-            {
-                cout<< over<<" "<<ov<<"\n";
-            }
-            else
-            {
-                cout<<over<<" "<<ov<<" "<<ball<<" "<<ba<<"\n";
-            }
-        }
+
+        long long ans = max(sum1, sum2);
+        cout << ans << "\n";
     }
     return 0;
 }

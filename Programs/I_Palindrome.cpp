@@ -14,11 +14,11 @@ int main()
     reverse(s.begin(),s.end());
     if(s==so)
     {
-        cout<<stoi(s)<<"\nYES\n";
+        cout<<"YES\n";
     }
     else
     {
-        cout<<stoi(s)<<"\nNO\n";
+        cout<<"NO\n";
     }
     return 0;
 }

@@ -31,7 +31,10 @@
 			"functional": "cpp",
 			"ostream": "cpp",
 			"iomanip": "cpp",
-			"algorithm": "cpp"
+			"algorithm": "cpp",
+			"cmath": "cpp",
+			"random": "cpp",
+			"ratio": "cpp"
 		}
 	}
 }

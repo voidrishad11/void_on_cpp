@@ -6,17 +6,8 @@
 using namespace std;
 int main()
 {
-    vector<string>s;
-    getline(cin,s);
-    char  c = \ ;
-    for (int i = 0; i < s.size(); i++)
-    {
-        char t = s[i];
-        if ( t != \ )
-        {
-            cout<<s[i];
-        }
-    }
-    cout<<"\n";
+    string s;
+    getline(cin,s,'\\');
+    cout<<s<<"\n";
     return 0;
 }

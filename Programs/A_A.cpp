@@ -1,16 +1,18 @@
 #include <iostream>
+#include <map>
 #include <algorithm>
 #include <string>
-#include <vector>
-#include <cmath>
-#include <iomanip>
-#define PI 3.14159
+
 using namespace std;
 
 int main() 
 {
-    string s;
-    getline(cin, s);
-    cout<<s;
+    long long t,a;
+    cin>>t;
+    while(t--)
+    {
+        cin>>a;
+        cout<<a%10<<"\n";
+    }
     return 0;
 }
