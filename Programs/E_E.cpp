@@ -1,32 +1,40 @@
 #include <iostream>
-#include <algorithm>
-#include <string>
-#include <vector>
-using namespace std;
+#include <unordered_map>
 
-int main() 
-{
-    long long n,a,sum,b,t;
-    cin>>a>>b;
-    vector<long long>f(b);
-    f[0]= 0;
-    f[1]= 1;
-    f[2]= 2;
-    for (long long i = 3; i < b; i++)
-    {
-        f[i]= f[i-1]+f[i-2];
-    }
-    
-    for (long long i = 0; i <= b; i++)
-    {
-        if(a <= f[i] && b >= f[i] )
-        {
-            cout<<f[i]<<"\n";
+int countDivisors(int num) {
+    int count = 1;
+    int i = 2;
+    while (i * i <= num) {
+        int factorCount = 0;
+        while (num % i == 0) {
+            factorCount++;
+            num /= i;
         }
-        if(b <= f[i] )
-        {
-            break;
+        count *= (factorCount + 1);
+        i++;
+    }
+    if (num > 1) {
+        count *= 2; // num is prime
+    }
+    return count;
+}
+
+int main() {
+    // Input
+    int n;
+    std::cin >> n;
+
+    // Count Shichi-Go numbers
+    int shichiGoCount = 0;
+    for (int i = 1; i <= n; i++) {
+        int divisorsCount = countDivisors(i);
+        if (divisorsCount == 75) {
+            shichiGoCount++;
         }
     }
+
+    // Output
+    std::cout << shichiGoCount << std::endl;
+
     return 0;
 }

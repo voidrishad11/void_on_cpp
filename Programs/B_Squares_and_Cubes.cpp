@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : voidrishad11
-    created   : Tuesday | 09 January, 2024 | 21.42.48
+    created   : Saturday | 13 January, 2024 | 17.26.19
 ------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -30,38 +30,36 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
-int main() 
+int main()
 {
-    ll r,d,x,y,rr;
-    cin >>r>>d;
-    ll n;
-    cin >> n;
-    ll cnt = 0;
-    while (n--) 
+    ll t;
+    cin >> t;
+    while ( t-- )
     {
-        cin >> x >> y >> rr;
-        
-        //for 1st quad
-        if ( x <= r || y <= r || x >= (r-d) || y >= (r-d))
+        ll a;
+        cin >> a;
+        ll b,c,i = 1;
+        ll  cnt = 0;
+        c = i*i*i;
+        b = i*i;
+        for (i = 1; b <= a || c <= a; i++)
         {
-            cnt ++;
+            b = i*i;
+            c = i*i*i;
+            if (b <= a)
+            {
+                cnt++;
+            }
+            if (c <= a)
+            {
+                cnt++;
+            }
+            if (b == c)
+            {
+                cnt--;
+            }
         }
-        //for 2nd quad
-        else if ( x <= (-1) * r || y <= r || x >= (-1) * (r-d) || y >= (r-d))
-        {
-            cnt ++;
-        }
-        //for 3rd quad
-        else if ( x <= (-1) *r || y <= (-1) *r || x >= (-1) *(r-d) || y >= (-1) * (r-d))
-        {
-            cnt ++;
-        }
-        //for 4th quad
-        else if ( x <= r || y <= (-1) *r || x >= (r-d) || y >= (-1) *(r-d))
-        {
-            cnt ++;
-        }
+        cout<<cnt<<"\n";
     }
-    cout << cnt << "\n";
     return 0;
 }

@@ -30,42 +30,62 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
-int main()
+
+int main() 
 {
-    ll t;
-    cin>>t;
-    while(t--)
+    ll n, sit = 0, sta = 0, minutes = 0;
+    cin >> n;
+    string s;
+    cin >> s;
+
+    for (ll i = 0; i < n; i++) 
     {
-        ll n,k,c=0;
-        cin>>n>>k;
-        string s;
-        cin>>s;
-        bool flag = false;
-        for (ll i = 0; i < n; i++)
+        if (s[i] == 'x') 
         {
-            if( s[i] == '*')
-            {
-                c++;
-                if ( c >= k )
-                {
-                    flag = true;
-                    break;
-                }
-            }
-            else
-            {
-                c=0;
-            }
-        }
-        if(flag)
+            sit++;
+        } 
+        else 
         {
-            cout<<"YES\n";
-        }
-        else
-        {
-            cout<<"NO\n";
+            sta++;
         }
     }
-    
+
+    if (sit == n / 2 && sta == n / 2) 
+    {
+        cout << 0 << "\n";
+        cout << s << "\n";
+    } 
+    else 
+    {
+        if (sit > sta) 
+        {
+            for (ll i = 0; (sit != n / 2 && sta != n / 2) && i < n; i++) 
+            {
+                if (s[i] == 'x') 
+                {
+                    s[i] = 'X';
+                    sta++;
+                    sit--;
+                    minutes++;
+                }
+            }
+        } 
+        else if (sit < sta) 
+        {
+            for (ll i = 0; (sit != n / 2 && sta != n / 2) && i < n; i++) 
+            {
+                if (s[i] == 'X') 
+                {
+                    s[i] = 'x';
+                    sta--;
+                    sit++;
+                    minutes++;
+                }
+            }
+        }
+        cout << minutes << "\n";
+        cout << s << "\n";
+    }
+
     return 0;
 }

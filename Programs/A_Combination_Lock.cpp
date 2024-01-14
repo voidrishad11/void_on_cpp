@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : voidrishad11
-    created   : Tuesday | 09 January, 2024 | 21.42.48
+    created   : Thursday | 11 January, 2024 | 16.56.51
 ------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -30,38 +30,29 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
-int main() 
+
+int main()
 {
-    ll r,d,x,y,rr;
-    cin >>r>>d;
     ll n;
     cin >> n;
-    ll cnt = 0;
-    while (n--) 
+    string s1, s2;
+    cin >> s1;
+    cin >> s2;
+    ll sum = 0, dif = 0;
+
+    for (ll i = 0; i < n; i++)
     {
-        cin >> x >> y >> rr;
-        
-        //for 1st quad
-        if ( x <= r || y <= r || x >= (r-d) || y >= (r-d))
+        dif = abs(s1[i] - s2[i]);
+        if (dif > 5)
         {
-            cnt ++;
+            dif = 5 - (dif - 5);
+            sum = sum + dif;
         }
-        //for 2nd quad
-        else if ( x <= (-1) * r || y <= r || x >= (-1) * (r-d) || y >= (r-d))
+        else
         {
-            cnt ++;
-        }
-        //for 3rd quad
-        else if ( x <= (-1) *r || y <= (-1) *r || x >= (-1) *(r-d) || y >= (-1) * (r-d))
-        {
-            cnt ++;
-        }
-        //for 4th quad
-        else if ( x <= r || y <= (-1) *r || x >= (r-d) || y >= (-1) *(r-d))
-        {
-            cnt ++;
+            sum = sum + dif;
         }
     }
-    cout << cnt << "\n";
+    cout << sum << "\n";
     return 0;
 }

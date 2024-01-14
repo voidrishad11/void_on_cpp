@@ -34,7 +34,8 @@
 			"algorithm": "cpp",
 			"cmath": "cpp",
 			"random": "cpp",
-			"ratio": "cpp"
+			"ratio": "cpp",
+			"new": "cpp"
 		}
 	}
 }

@@ -2,31 +2,55 @@
 #include <vector>
 #include <algorithm>
 
-using namespace std;
+int findMaxSubstringLength(const std::string& s) {
+    int n = s.size();
+    std::vector<int> lps(n, 0);
 
-int main() 
-{
-    int T;
-    cin >> T;
+    // Compute the Longest Prefix Suffix (LPS) array
+    int len = 0;
+    int i = 1;
 
-    while (T--) {
-        int N;
-        cin >> N;
-
-        vector<int> A(N);
-        for (int i = 0; i < N; ++i) {
-            cin >> A[i];
+    while (i < n) {
+        if (s[i] == s[len]) {
+            len++;
+            lps[i] = len;
+            i++;
+        } else {
+            if (len != 0) {
+                len = lps[len - 1];
+            } else {
+                lps[i] = 0;
+                i++;
+            }
         }
+    }
 
-        sort(A.begin(), A.end());
+    // Check if there is a substring with the same prefix and suffix
+    int maxLen = lps[n - 1];
+    if (maxLen == 0) {
+        return -1;  // No such substring exists
+    }
 
-        long long minOperations = 0;
-
-        for (int i = 0; i < N / 2; ++i) {
-            minOperations += A[N - i - 1] - A[i];
+    // Check if the substring is not a prefix or suffix
+    for (int i = 1; i < n - 1; i++) {
+        if (lps[i] == maxLen) {
+            return -1;  // Substring is either prefix or suffix
         }
+    }
 
-        cout << minOperations << endl;
+    return maxLen;
+}
+
+int main() {
+    int t;
+    std::cin >> t;
+
+    while (t--) {
+        std::string s;
+        std::cin >> s;
+
+        int result = findMaxSubstringLength(s);
+        std::cout << result << std::endl;
     }
 
     return 0;

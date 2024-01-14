@@ -1,6 +1,7 @@
+
 /*------------------------------------------------------
     author    : voidrishad11
-    created   : Tuesday | 09 January, 2024 | 21.42.48
+    created   : Wednesday | 10 January, 2024 | 13.38.15
 ------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -29,39 +30,39 @@ using namespace std;
 #define imax INT_MAX
 #define imin INT_MIN
 #define exp 1e9
+#define front(i,a,n) for(ll i=a;i<=n;i++)
 #define sz(x) (int((x).size()))
-int main() 
+
+int main ()
 {
-    ll r,d,x,y,rr;
-    cin >>r>>d;
-    ll n;
-    cin >> n;
-    ll cnt = 0;
-    while (n--) 
+    //sieve of eratosthenes
+    vector<int>ara;
+    ara.resize(1000000); //vector size
+    fill(ara.begin(),ara.end(),0);//set each values of vector is zero
+    front(i,2,1000000)
     {
-        cin >> x >> y >> rr;
-        
-        //for 1st quad
-        if ( x <= r || y <= r || x >= (r-d) || y >= (r-d))
+        if(ara[i]==0)
         {
-            cnt ++;
-        }
-        //for 2nd quad
-        else if ( x <= (-1) * r || y <= r || x >= (-1) * (r-d) || y >= (r-d))
-        {
-            cnt ++;
-        }
-        //for 3rd quad
-        else if ( x <= (-1) *r || y <= (-1) *r || x >= (-1) *(r-d) || y >= (-1) * (r-d))
-        {
-            cnt ++;
-        }
-        //for 4th quad
-        else if ( x <= r || y <= (-1) *r || x >= (r-d) || y >= (-1) *(r-d))
-        {
-            cnt ++;
+            for(int j=2; i*j<=1000000;j++)
+            {
+                ara[i*j]=1; // mark all multiples of i by assigning 1
+            }
         }
     }
-    cout << cnt << "\n";
+    
+    int n;
+    cin>>n;
+    ll element;
+    ll sq;
+    front(i,1,n){
+        cin>>element;
+        sq = sqrt(element);
+        if(sq*sq==element && ara[sq]==0 && element!=1){
+            cout<<"YES"<<endl;
+        }
+        else{
+            cout<<"NO"<<endl;
+        }
+    }
     return 0;
 }

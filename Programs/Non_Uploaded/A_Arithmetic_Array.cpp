@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : voidrishad11
-    created   : Tuesday | 09 January, 2024 | 21.42.48
+    created   : Sunday | 14 January, 2024 | 02.46.28
 ------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -30,38 +30,32 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
-int main() 
+int main()
 {
-    ll r,d,x,y,rr;
-    cin >>r>>d;
-    ll n;
-    cin >> n;
-    ll cnt = 0;
-    while (n--) 
+    ll t;
+    cin >> t;
+    while(t--)
     {
-        cin >> x >> y >> rr;
-        
-        //for 1st quad
-        if ( x <= r || y <= r || x >= (r-d) || y >= (r-d))
+        ll k;
+        cin >> k;
+        ll a[k];
+        ll sum = 0;
+        for (ll i = 0; i < k; i++)
         {
-            cnt ++;
+            cin >> a[i];
+            sum = sum + a[i];
         }
-        //for 2nd quad
-        else if ( x <= (-1) * r || y <= r || x >= (-1) * (r-d) || y >= (r-d))
+        if (sum == k)
         {
-            cnt ++;
+            cout<<"0\n";
         }
-        //for 3rd quad
-        else if ( x <= (-1) *r || y <= (-1) *r || x >= (-1) *(r-d) || y >= (-1) * (r-d))
+        else
         {
-            cnt ++;
-        }
-        //for 4th quad
-        else if ( x <= r || y <= (-1) *r || x >= (r-d) || y >= (-1) *(r-d))
-        {
-            cnt ++;
+            if(k > sum)
+                cout<<"1\n";
+            else
+                cout<<sum - k<<"\n";
         }
     }
-    cout << cnt << "\n";
     return 0;
 }

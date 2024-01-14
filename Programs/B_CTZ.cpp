@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : voidrishad11
-    created   : Tuesday | 09 January, 2024 | 21.42.48
+    created   : Sunday | 14 January, 2024 | 18.11.06
 ------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -30,38 +30,33 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
+#include <iostream>
+#include <bitset>
+
+string decToBinary(const string& decimalStr) 
+{
+    int decimalNumber = stoi(decimalStr);
+    bitset<32> binaryRepresentation(decimalNumber);
+    return binaryRepresentation.to_string();
+}
+
 int main() 
 {
-    ll r,d,x,y,rr;
-    cin >>r>>d;
-    ll n;
-    cin >> n;
-    ll cnt = 0;
-    while (n--) 
+    string num;
+    cin >> num;
+    ll c = 0;
+    string bin = decToBinary(num);
+    for (ll i = bin.size()-1; i >=0 ; i--)
     {
-        cin >> x >> y >> rr;
-        
-        //for 1st quad
-        if ( x <= r || y <= r || x >= (r-d) || y >= (r-d))
+        if (bin[i] == '0')
         {
-            cnt ++;
+            c++;
         }
-        //for 2nd quad
-        else if ( x <= (-1) * r || y <= r || x >= (-1) * (r-d) || y >= (r-d))
-        {
-            cnt ++;
-        }
-        //for 3rd quad
-        else if ( x <= (-1) *r || y <= (-1) *r || x >= (-1) *(r-d) || y >= (-1) * (r-d))
-        {
-            cnt ++;
-        }
-        //for 4th quad
-        else if ( x <= r || y <= (-1) *r || x >= (r-d) || y >= (-1) *(r-d))
-        {
-            cnt ++;
-        }
+        else
+            break;
     }
-    cout << cnt << "\n";
+    cout << c << "\n";
+
     return 0;
 }
+

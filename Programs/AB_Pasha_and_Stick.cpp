@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : voidrishad11
-    created   : Tuesday | 09 January, 2024 | 21.42.48
+    created   : Monday | 08 January, 2024 | 16.54.54
 ------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -30,38 +30,24 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
-int main() 
+int main()
 {
-    ll r,d,x,y,rr;
-    cin >>r>>d;
     ll n;
     cin >> n;
-    ll cnt = 0;
-    while (n--) 
+    if (n % 2 == 0)
     {
-        cin >> x >> y >> rr;
-        
-        //for 1st quad
-        if ( x <= r || y <= r || x >= (r-d) || y >= (r-d))
+        if (n % 4 == 0)
         {
-            cnt ++;
+            cout<<n/4 -1 <<"\n";
         }
-        //for 2nd quad
-        else if ( x <= (-1) * r || y <= r || x >= (-1) * (r-d) || y >= (r-d))
+        else
         {
-            cnt ++;
-        }
-        //for 3rd quad
-        else if ( x <= (-1) *r || y <= (-1) *r || x >= (-1) *(r-d) || y >= (-1) * (r-d))
-        {
-            cnt ++;
-        }
-        //for 4th quad
-        else if ( x <= r || y <= (-1) *r || x >= (r-d) || y >= (-1) *(r-d))
-        {
-            cnt ++;
+            cout<<n/4<<"\n";
         }
     }
-    cout << cnt << "\n";
+    else
+    {
+        cout<<"0\n";
+    }
     return 0;
 }

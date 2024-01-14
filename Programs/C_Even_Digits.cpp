@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : voidrishad11
-    created   : Tuesday | 09 January, 2024 | 21.42.48
+    created   : Sunday | 14 January, 2024 | 18.06.03
 ------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -30,38 +30,24 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
-int main() 
+int main()
 {
-    ll r,d,x,y,rr;
-    cin >>r>>d;
-    ll n;
+    ll n ;
     cin >> n;
-    ll cnt = 0;
-    while (n--) 
+    ll i;
+    ll c = 0, c1 = 0,c2 = 0;
+    for (i = 2; i <= n; i++)
     {
-        cin >> x >> y >> rr;
-        
-        //for 1st quad
-        if ( x <= r || y <= r || x >= (r-d) || y >= (r-d))
+        if (i%5 == 0)
         {
-            cnt ++;
+            c += 10;
+            c += 2;
         }
-        //for 2nd quad
-        else if ( x <= (-1) * r || y <= r || x >= (-1) * (r-d) || y >= (r-d))
+        else
         {
-            cnt ++;
-        }
-        //for 3rd quad
-        else if ( x <= (-1) *r || y <= (-1) *r || x >= (-1) *(r-d) || y >= (-1) * (r-d))
-        {
-            cnt ++;
-        }
-        //for 4th quad
-        else if ( x <= r || y <= (-1) *r || x >= (r-d) || y >= (-1) *(r-d))
-        {
-            cnt ++;
+            c += 2;
         }
     }
-    cout << cnt << "\n";
+    cout<<c<<"\n";
     return 0;
 }

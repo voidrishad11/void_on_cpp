@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : voidrishad11
-    created   : Tuesday | 09 January, 2024 | 21.42.48
+    created   : Thursday | 11 January, 2024 | 16.42.52
 ------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -30,38 +30,32 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
-int main() 
+int main()
 {
-    ll r,d,x,y,rr;
-    cin >>r>>d;
     ll n;
     cin >> n;
-    ll cnt = 0;
-    while (n--) 
+    string s, newStr;
+    cin >> s;
+
+    while (s.length() != 0)
     {
-        cin >> x >> y >> rr;
-        
-        //for 1st quad
-        if ( x <= r || y <= r || x >= (r-d) || y >= (r-d))
+        if (s.length() % 2 == 0)
         {
-            cnt ++;
+            size_t e = (s.length() / 2) - 1;
+            char c = s[e];
+            newStr = newStr + c;
+            s.erase(e, 1);
         }
-        //for 2nd quad
-        else if ( x <= (-1) * r || y <= r || x >= (-1) * (r-d) || y >= (r-d))
+        else
         {
-            cnt ++;
-        }
-        //for 3rd quad
-        else if ( x <= (-1) *r || y <= (-1) *r || x >= (-1) *(r-d) || y >= (-1) * (r-d))
-        {
-            cnt ++;
-        }
-        //for 4th quad
-        else if ( x <= r || y <= (-1) *r || x >= (r-d) || y >= (-1) *(r-d))
-        {
-            cnt ++;
+            size_t e = (s.length()) / 2;
+            char c = s[e];
+            newStr = newStr + c;
+            s.erase(e, 1);
         }
     }
-    cout << cnt << "\n";
+
+    cout << newStr << "\n";
+
     return 0;
 }

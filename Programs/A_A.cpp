@@ -12,7 +12,12 @@ int main()
     while(t--)
     {
         cin>>a;
-        cout<<a%10<<"\n";
+        if (a>98)
+        {
+            cout<<"YES\n";
+        }
+        else
+            cout<<"NO\n";
     }
     return 0;
 }
