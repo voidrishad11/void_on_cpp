@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : voidrishad11
-    created   : Sunday | 14 January, 2024 | 02.37.18
+    created   : Monday | 15 January, 2024 | 22.06.36
 ------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -32,13 +32,25 @@ using namespace std;
 #define sz(x) (int((x).size()))
 int main()
 {
-    ll n,p,b;
-    cin >> n >> p >> b;
-    if(n <= p && n <= b)
-        cout<<"Yes\n";
-    else
-        cout<<"No\n";
+    ll t;
+    cin >> t;
+    while(t--)
+    {
+        ll n , m;
+        cin >> n >> m;
+        vll a(n),b(m);
+        for (ll i = 0; i < n; i++)
+        {
+            cin >> a[i];
+        }
+        for (ll i = 0; i < m; i++)
+        {
+            cin >> b[i];
+        }
+
+        sort(a.rbegin(),a.rend());
+        sort(b.begin(),b.end());
+        
+    }
     return 0;
 }
-
-// https://codeforces.com/problemset/problem/1186/A
