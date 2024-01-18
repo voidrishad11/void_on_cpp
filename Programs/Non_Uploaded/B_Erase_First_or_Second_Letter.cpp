@@ -33,11 +33,11 @@ using namespace std;
 
 int main() 
 {
-   int t ;
+   ll t ;
    cin >> t ;
    while(t--)
    {
-       int n ;
+       ll n ;
        cin >> n ;
        string s ;
        cin >> s ;

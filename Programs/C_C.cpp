@@ -1,57 +1,49 @@
-#include <iostream>
+/*------------------------------------------------------
+    author    : voidrishad11
+    created   : Tuesday | 16 January, 2024 | 21.34.12
+------------------------------------------------------*/
+
+#include <bits/stdc++.h>
+#include <string>
+#include <iomanip>
 #include <vector>
 #include <algorithm>
-
-int findMaxSubstringLength(const std::string& s) {
-    int n = s.size();
-    std::vector<int> lps(n, 0);
-
-    // Compute the Longest Prefix Suffix (LPS) array
-    int len = 0;
-    int i = 1;
-
-    while (i < n) {
-        if (s[i] == s[len]) {
-            len++;
-            lps[i] = len;
-            i++;
-        } else {
-            if (len != 0) {
-                len = lps[len - 1];
-            } else {
-                lps[i] = 0;
-                i++;
-            }
+#include <cmath>
+#include <iostream>
+using namespace std;
+#define read(type) readInt<type>()
+#define ll long long
+#define nL "\n"
+#define pb push_back
+#define mk make_pair
+#define pii pair<int, int>
+#define a first
+#define b second
+#define vi vector<int>
+#define vll vector<long long>
+#define vs vector<string>
+#define all(x) (x).begin(), (x).end()
+#define umap unordered_map
+#define uset unordered_set
+#define MOD 1000000007
+#define imax INT_MAX
+#define imin INT_MIN
+#define exp 1e9
+#define sz(x) (int((x).size()))
+int main()
+{
+    ll t ;
+    cin >> t;
+    while (t--)
+    {
+        string s1,s2;
+        cin >> s1;
+        cin >> s2;
+        for (ll i = 0; i < count; i++)
+        {
+            /* code */
         }
+        
     }
-
-    // Check if there is a substring with the same prefix and suffix
-    int maxLen = lps[n - 1];
-    if (maxLen == 0) {
-        return -1;  // No such substring exists
-    }
-
-    // Check if the substring is not a prefix or suffix
-    for (int i = 1; i < n - 1; i++) {
-        if (lps[i] == maxLen) {
-            return -1;  // Substring is either prefix or suffix
-        }
-    }
-
-    return maxLen;
-}
-
-int main() {
-    int t;
-    std::cin >> t;
-
-    while (t--) {
-        std::string s;
-        std::cin >> s;
-
-        int result = findMaxSubstringLength(s);
-        std::cout << result << std::endl;
-    }
-
     return 0;
 }

@@ -7,17 +7,12 @@ using namespace std;
 
 int main() 
 {
-    long long t,a;
+    long long t,a,b;
     cin>>t;
     while(t--)
     {
-        cin>>a;
-        if (a>98)
-        {
-            cout<<"YES\n";
-        }
-        else
-            cout<<"NO\n";
+        cin>>a>>b;
+        cout<<a*b<<"\n";
     }
     return 0;
 }
