@@ -43,17 +43,12 @@ int main()
     {
         if ( a[i] == 0 )
         {
-            reverse(b.begin(),b.end());
-            b.push_back(a[i]);
-        }
-        else
-        {
-            b.push_back(a[i]);
+            reverse(a.begin(),a.begin() + i);
         }
     }
     for (ll i = 0; i < n; i++)
     {
-        cout<<b[i]<<" ";
+        cout<<a[i]<<" ";
     }
     cout<<"\n";
     return 0;

@@ -32,21 +32,23 @@ using namespace std;
 #define sz(x) (int((x).size()))
 int main()
 {
-    ll n,i,sum = 0;
-    cin>>n;
-    for (ll i = 1;; i++)
+    ll n,i,add = 0, tot = 0;
+    ll c = 0;
+    cin >> n;
+    for (ll i = 1; 1 ; i++)
     {
-        sum = sum + i;
-        if(sum > n)
+        add += i;
+        tot+=add;
+        if (tot > n)
         {
-            cout<<i-1<<"\n";
             break;
         }
-        if(sum == n)
+        else
         {
-            cout<<i<<"\n";
-            break;
+            c++;
         }
+        // cout << tot << nL;
     }
+    cout << c << nL;
     return 0;
 }

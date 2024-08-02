@@ -1,0 +1,1 @@
+{"name":"Local: c","url":"c:\\Users\\Lenovo\\Desktop\\void_on_cpp\\Programs\\c.cpp","tests":[{"id":1708360096953,"input":"2\n4\n1 -10 2 2\n2\n1 2","output":"Case 1: 5 1\nCase 2: 3 0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Lenovo\\Desktop\\void_on_cpp\\Programs\\c.cpp","group":"local","local":true}

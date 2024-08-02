@@ -1,0 +1,1 @@
+{"name":"Local: a_cu","url":"c:\\Users\\Lenovo\\OneDrive\\Desktop\\void_on_cpp\\Programs\\a_cu.cpp","tests":[{"id":1720100766077,"input":"4 4\ncuss\n1 4 1\n1 4 2\n1 4 3\n1 4 4","output":"No\nYes\nYes\nYes"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Lenovo\\OneDrive\\Desktop\\void_on_cpp\\Programs\\a_cu.cpp","group":"local","local":true}

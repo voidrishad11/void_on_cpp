@@ -2,5 +2,26 @@
     "C_Cpp.errorSquiggles": "disabled",
     "cSpell.words": [
         "voidrishad"
-    ]
+    ],
+    "files.associations": {
+        "iostream": "cpp",
+        "variant": "cpp",
+        "random": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp",
+        "cstdlib": "cpp",
+        "array": "cpp",
+        "chrono": "cpp",
+        "functional": "cpp",
+        "ratio": "cpp",
+        "scoped_allocator": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "ostream": "cpp"
+    },
+    "files.autoSaveWorkspaceFilesOnly": true,
+    "files.autoSaveWhenNoErrors": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1
 }

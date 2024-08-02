@@ -1,39 +1,46 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <cmath>
-#include <string>
+/*------------------------------------------------------
+    author    : voidrishad11
+    created   : Thursday | 14 March, 2024 | 22.58.41
+------------------------------------------------------*/
+
+#include <bits/stdc++.h>
+#define nL "\n"
+#define ll long long int
+#define pb push_back
+#define mk make_pair
+#define pii pair<int, int>
+#define ff first
+#define ss second
+#define vi vector<int>
+#define vll vector<long long>
+#define vs vector<string>
+#define all(x) (x).begin(), (x).end()
+#define umap unordered_map
+#define uset unordered_set
+#define MOD 1000000007
+#define imax INT_MAX
+#define imin INT_MIN
+#define exp 1e9
+#define sz(x) (int((x).size()))
 using namespace std;
-int main()
+
+int main() 
 {
-    long long t,c;
+    ll t;
     cin>>t;
     while(t--)
     {
-        long long n;
+        ll n,i,j,mx=0;
+        ll v[26]={0};
         cin>>n;
         string s;
         cin>>s;
-        for (int i = 0; i < s.size(); i++)
-        {
-            if(s[i] != s[i+1])
-            {
-                size_t posToRemove = i;
-                if (posToRemove < s.size()) 
-                {
-                    s.erase(posToRemove, 1);
-                }
-                posToRemove = i;
-                if (posToRemove < s.size()) 
-                {
-                    s.erase(posToRemove, 1);
-                }
-                i = 0;
-            }
+        for(i=0;i<n;i++){
+            v[s[i]-'a']++;
+            mx = max(mx,v[s[i]-'a']);
         }
-        cout<<s.size()<<"\n";
-             
+        cout<<(max(n%2,2*mx-n))<<endl;;
+        
     }
-    
     return 0;
 }

@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "valarray": "cpp",
+        "iostream": "cpp",
+        "unordered_map": "cpp"
+    },
+    "java.project.explorer.showNonJavaResources": false
+}

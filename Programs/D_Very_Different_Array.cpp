@@ -1,24 +1,28 @@
+
 /*------------------------------------------------------
     author    : voidrishad11
-    created   : Monday | 15 January, 2024 | 22.06.36
+    created   : Thursday | 29 February, 2024 | 23.38.12
 ------------------------------------------------------*/
 
 #include <bits/stdc++.h>
 #include <string>
 #include <iomanip>
+#include <map>
 #include <vector>
 #include <algorithm>
 #include <cmath>
 #include <iostream>
-using namespace std;
+#include <numeric>
 #define read(type) readInt<type>()
-#define ll long long
+#define front(i,a,n) for(ll i=a;i<=n;i++)
+#define back(i,a,n) for(ll i=n;i>=a;i--)
 #define nL "\n"
+#define ll long long int
 #define pb push_back
 #define mk make_pair
 #define pii pair<int, int>
-#define a first
-#define b second
+#define ff first
+#define ss second
 #define vi vector<int>
 #define vll vector<long long>
 #define vs vector<string>
@@ -30,27 +34,32 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
-int main()
+#define fast ios::sync_with_stdio(0);cin.tie(0);cout.tie(0)
+using namespace std;
+int main ()
 {
+    fast;
     ll t;
-    cin >> t;
-    while(t--)
+    cin>>t;
+    while (t--)
     {
-        ll n , m;
-        cin >> n >> m;
-        vll a(n),b(m);
-        for (ll i = 0; i < n; i++)
-        {
-            cin >> a[i];
+        ll a,b;
+        cin>>a>>b;
+        vll store1(a);
+        vll store2(b);
+        for(ll i=0;i<a;i++){
+            cin>>store1[i];
         }
-        for (ll i = 0; i < m; i++)
-        {
-            cin >> b[i];
+        for(ll i=0;i<b;i++){
+            cin>>store2[i];
         }
-
-        sort(a.rbegin(),a.rend());
-        sort(b.begin(),b.end());
-        
+        sort(all(store1));
+        sort(all(store2));
+        ll total = 0;
+        for(ll i=0;i<a;i++){
+            total+=max(abs(store1[i]-store2[b-i-1]),abs(store1[i]-store2[a-i-1]));
+        }
+        cout<<total<<endl;
     }
     return 0;
 }

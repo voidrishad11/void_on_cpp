@@ -32,20 +32,25 @@ using namespace std;
 #define sz(x) (int((x).size()))
 int main()
 {
-    ll n,m,c=0,earn = 0 ;
+    ll n,m,c=1,earn = 0;
     cin>>n>>m;
-    vi a(n);
+    vll a(n);
     for (ll i = 0; i < n; i++)
     {
         cin>>a[i];
     }
     sort(a.begin(),a.end());
-    for (ll i = 0; i < n && c < 3; i++)
+    for (ll i = 0; i < n && c <= m; i++)
     {
         if(a[i] < 0)
         {
             c++;
             earn += abs(a[i]);
+            // cout << earn << nL;
+        }
+        else
+        {
+            break;
         }
     }
     cout<<earn<<"\n";

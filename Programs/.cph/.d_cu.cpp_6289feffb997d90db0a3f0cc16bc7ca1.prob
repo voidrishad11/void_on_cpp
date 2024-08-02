@@ -1,0 +1,1 @@
+{"name":"Local: d_cu","url":"c:\\Users\\Lenovo\\OneDrive\\Desktop\\void_on_cpp\\Programs\\d_cu.cpp","tests":[{"id":1720104641765,"input":"3\n5 3 8\n15 5 10\n6 11 2","output":"3\n2\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Lenovo\\OneDrive\\Desktop\\void_on_cpp\\Programs\\d_cu.cpp","group":"local","local":true}

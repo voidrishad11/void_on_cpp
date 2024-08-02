@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : voidrishad11
-    created   : Friday | 29 December, 2023 | 21.05.45
+    created   : Monday | 22 January, 2024 | 21.06.22
 ------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -30,41 +30,31 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
-
-int main() 
+int main()
 {
     ll t;
     cin >> t;
-    while ( t-- )
+    while (t--)
     {
-        ll n,x;
-        cin >> n >> x;
-        vll a(n);
-        for (ll i = 0; i < n; i++)
+        string s,d;
+        cin >> s;
+        cin >> d;
+        sort(s.begin(),s.end());
+        sort(d.begin(),d.end());
+        ll c = 0;
+        ll m = -1;
+        for (ll i = 0; i < s.length(); i++)
         {
-            cin >> a[i];
-        }
-        sort(a.rbegin(),a.rend());
-        ll sum = 0;
-        ll i;
-        bool flag = false;
-        for (i = 0; i < n; i++)
-        {
-            sum = sum + a[i];
-            if ( sum >= x )
+            for (ll j = m + 1; j < d.length(); j++)
             {
-                flag = true;
-                break;
+                if (s[i] == d[j])
+                {
+                    c++;
+                    m++;
+                }
             }
         }
-        if (flag)
-        {
-            cout<<i+1<<"\n";
-        }
-        else
-        {
-            cout<<"-1\n";
-        } 
+        cout<<c<<"\n";
     }
     return 0;
 }
