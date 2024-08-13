@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------------------
          author    : voidrishad11
-         created   : Tuesday | 13 August, 2024 | 04:14:19 GMT +6
+         created   : Tuesday | 13 August, 2024 | 04:03:51 GMT +6
 ---------------------------------------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -23,10 +23,9 @@ using namespace std;
 #define mk make_pair
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
-
-int main()
-{
-    int tc;
+int main() {
+    fast;
+    ll tc;
     cin >> tc;
     while(tc--) 
     {
@@ -34,11 +33,12 @@ int main()
         cin >> n;
         string s;
         cin >> s;
-        transform(s.begin(), s.end(), s.begin(), ::tolower);
-
-        auto it = unique(all(s));
-        s.erase(it,s.end());
-
-        cout << (s == "meow" ? "YES" : "NO") << nL;
+        ll ans = n-1;
+        for(ll i = 0 ; i < n-1 ; i++)
+        {
+            if(s[i]==s[i+2])ans--;
+        }
+        cout << ans << nL;
     }
+    return 0;
 }
