@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------------------
          author    : voidrishad11
-         created   : Saturday | 31 August, 2024 | 22:54:09 GMT +6
+         created   : Wednesday | 28 August, 2024 | 23:50:00 GMT +6
 ---------------------------------------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -21,21 +21,31 @@ using namespace std;
 #define mk make_pair
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
-int main()
+
+int main() 
 {
-    ll n,k;
-    cin>>n>>k;
-    ll sum = 0;
-    vll a(n);
-    for (ll i = 0; i < n; i++)
+    fast;
+    ll tc;
+    cin >> tc;
+    while(tc--) 
     {
-        cin>>a[i];
+        ll n, k;
+        cin >> n >> k;
+        vs grid(n);
+
+        for(ll i = 0; i < n; i++) 
+        {
+            cin >> grid[i];
+        }
+
+        for(ll i = 0; i < n; i += k) 
+        {
+            for(ll j = 0; j < n; j += k) 
+            {
+                cout << grid[i][j];
+            }
+            cout << nL;
+        }
     }
-    sort(a.rbegin(),a.rend());
-    for (ll i = 0; i < k; i++)
-    {
-        sum += a[i];
-    }
-    cout << sum << nL;
     return 0;
 }

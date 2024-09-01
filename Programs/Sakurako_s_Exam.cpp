@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------------------
          author    : voidrishad11
-         created   : Saturday | 31 August, 2024 | 22:54:09 GMT +6
+         created   : Sunday | 01 September, 2024 | 20:49:58 GMT +6
 ---------------------------------------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -21,21 +21,36 @@ using namespace std;
 #define mk make_pair
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
-int main()
+
+int main() 
 {
-    ll n,k;
-    cin>>n>>k;
-    ll sum = 0;
-    vll a(n);
-    for (ll i = 0; i < n; i++)
+    fast;
+    ll tc;
+    cin >> tc;
+    while (tc--) 
     {
-        cin>>a[i];
+        ll a, b;
+        cin >> a >> b;
+        ll sum = a + 2 * b;
+        if (sum % 2 == 0) 
+        {
+            if (a == 0 && b % 2 != 0) 
+            {
+                cout << "NO" << nL;
+            } 
+            else if (b == 0 && a % 2 != 0) 
+            {
+                cout << "NO" << nL;
+            } 
+            else 
+            {
+                cout << "YES" << nL;
+            }
+        } 
+        else 
+        {
+            cout << "NO" << nL;
+        }
     }
-    sort(a.rbegin(),a.rend());
-    for (ll i = 0; i < k; i++)
-    {
-        sum += a[i];
-    }
-    cout << sum << nL;
     return 0;
 }

@@ -13,16 +13,14 @@ int main()
     {
         if( x[i-1] > x[i])
         {
-            c1=1;
-            break;
+            c1++;
         }
     }
     for (int i = 1; i < y.size(); i++)
     {
         if( y[i-1] > y[i])
         {
-            c2=1;
-            break;
+            c2++;
         }
     }
     if(c1 < c2)
