@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------------------
          author    : voidrishad11
-         created   : Saturday | 19 October, 2024 | 19:10:02 GMT +6
+         created   : Tuesday | 03 September, 2024 | 21:40:29 GMT +6
 ---------------------------------------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -21,35 +21,30 @@ using namespace std;
 #define mk make_pair
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
-
-int main() 
-{
-    int N;
-    cin >> N;
-    
-    vector<int> popul(N);
-    
-    for (int i = 0; i < N; i++) 
+int main() {
+    fast;
+    ll tc;
+    cin >> tc;
+    while(tc--) 
     {
-        cin >> popul[i];
-    }
-    
-    long long kill = 0;
-    
-    for (int i = N - 2; i >= 0; i--) 
-    {
-        if (popul[i] >= popul[i + 1]) 
+        ll x,y,k;
+        cin >> x >> y >> k;
+        ll xl,yl;
+        xl = x%k;
+        yl = y%k;
+        x/=k;
+        y/=k;
+        ll count = 0;
+        count = x+y+xl+yl+(abs(x-y));
+        if (xl == 0 && yl == 0)
         {
-            kill += popul[i] - (popul[i + 1] - 1);
-            popul[i] = popul[i + 1] - 1;
-            
-            if (popul[i] < 0) 
-            {
-                cout << 1 << nL;
-                return 0;
-            }
+            count--;
         }
+        // else if ((x != 0 && y == 0) || (x == 0 && y != 0))
+        // {
+        //     count++;
+        // }
+        cout << count << nL;
     }
-    cout << kill << nL;
     return 0;
 }

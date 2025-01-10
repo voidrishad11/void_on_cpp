@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------------------
          author    : voidrishad11
-         created   : Saturday | 19 October, 2024 | 19:10:02 GMT +6
+         created   : Saturday | 09 November, 2024 | 15:51:29 GMT +6
 ---------------------------------------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -24,32 +24,25 @@ using namespace std;
 
 int main() 
 {
-    int N;
-    cin >> N;
-    
-    vector<int> popul(N);
-    
-    for (int i = 0; i < N; i++) 
+    ll T;
+    cin >> T;
+    while (T--) 
     {
-        cin >> popul[i];
+        ll X, Y, Z;
+        cin >> X >> Y >> Z;
+
+        ll s = (X + Y + Z) / 2;
+        ll a_sq = s * (s - X) * (s - Y) * (s - Z);
+        ll s_sq = s * s;
+
+        ll num = a_sq;
+        ll den = s_sq;
+
+        ll gcd = std::gcd(num, den);
+        num /= gcd;
+        den /= gcd;
+
+        cout << num << "/" << den << nL;
     }
-    
-    long long kill = 0;
-    
-    for (int i = N - 2; i >= 0; i--) 
-    {
-        if (popul[i] >= popul[i + 1]) 
-        {
-            kill += popul[i] - (popul[i + 1] - 1);
-            popul[i] = popul[i + 1] - 1;
-            
-            if (popul[i] < 0) 
-            {
-                cout << 1 << nL;
-                return 0;
-            }
-        }
-    }
-    cout << kill << nL;
     return 0;
 }
