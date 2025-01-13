@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------------------
          author    : voidrishad11
-         created   : Tuesday | 14 January, 2025 | 05:20:41 GMT +6
+         created   : Tuesday | 14 January, 2025 | 05:36:30 GMT +6
 ---------------------------------------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -21,33 +21,17 @@ using namespace std;
 #define mk make_pair
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
-
-int main()
-{
-    ll n,c=0,d,left;
-    cin>>n;
-    left = n;
-
-    if(left>=100)
+int main() {
+    fast;
+    ll tc;
+    cin >> tc;
+    while(tc--) 
     {
-        c += left/100;
-        left = left%100;    
+        ll n,a,b;
+        cin >> n >> a >> b ;
+        ll dis = abs(a-b);
+        if (dis%2 == 0) cout << "YES\n";
+        else cout << "NO\n";
     }
-    if (left>=20){
-        c += left/20;
-        left = left%20;
-    }
-    if (left>=10){
-        c += left/10;
-        left = left%10;
-    }
-    if (left>=5){
-        c += left/5;
-        left = left%5;
-    }
-    if (left != 0){
-        c += left;
-    }
-    cout<<c<<"\n";
     return 0;
 }
