@@ -31,29 +31,27 @@ using namespace std;
 #define imin INT_MIN
 #define exp 1e9
 #define sz(x) (int((x).size()))
+#include <bits/stdc++.h>
+
 int main()
 {
     ll n, t;
     cin >> n >> t;
-    vll a(n-1),b;
-    b.push_back(1);
-    bool flag = false;
+    vll a(n);
     for (ll i = 1; i < n; i++)
     {
         cin >> a[i];
-        if (t == a[i]+i)
-        {
-            flag = true;
-        }
     }
-    if (flag)
+    ll pos = 1;
+    while (pos < t)
     {
+        pos = pos + a[pos];
+    }
+
+    if (pos == t)
         cout << "YES\n";
-    }
     else
-    {
         cout << "NO\n";
-    }
-    
+
     return 0;
 }
