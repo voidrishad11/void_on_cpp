@@ -45,13 +45,11 @@ int main()
     ll pos = 1;
     while (pos < t)
     {
-        pos = pos + a[pos];
+        pos = pos + a[pos]; // jump korar por sudhu oi position er value ta add hobe
     }
 
-    if (pos == t)
-        cout << "YES\n";
-    else
-        cout << "NO\n";
+    if (pos == t) cout << "YES\n";
+    else cout << "NO\n";
 
     return 0;
 }
