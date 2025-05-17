@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------------------
          author    : voidrishad11
-         created   : Thursday | 15 May, 2025 | 05:11:03 GMT +6
+         created   : Friday | 16 May, 2025 | 21:13:22 GMT +6
 ---------------------------------------------------------------------------------------*/
 
 #include <bits/stdc++.h>
@@ -21,32 +21,35 @@ using namespace std;
 #define mk make_pair
 #define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 
-int main() {
-    ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-    
-    int n, m;
+int main() 
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+
+    ll n, m;
     cin >> n >> m;
-    
-    queue<pair<int, int>> q;
-    for (int i = 1; i <= n; i++) {
-        int candies;
-        cin >> candies;
-        q.push({candies, i}); // {candies_needed, child_index}
+    vll tasks(m);
+
+    for (ll i = 0; i < m; i++) {
+        cin >> tasks[i];
     }
 
-    int last = -1;
-    while (!q.empty()) {
-        auto [candies, idx] = q.front();
-        q.pop();
-        
-        candies -= m;
-        if (candies > 0) {
-            q.push({candies, idx});eas
-        } else {
-            last = idx;
+    ll time = 0;
+    ll pos = 1; // starting at house 1
+
+    for (ll i = 0; i < m; i++) 
+    {
+        if (tasks[i] >= pos) 
+        {
+            time += tasks[i] - pos;
+        } else 
+        {
+            time += n - (pos - tasks[i]);
         }
+        pos = tasks[i]; // update current position
     }
 
-    cout << last << "\n";
+    cout << time << "\n";
+
     return 0;
 }
